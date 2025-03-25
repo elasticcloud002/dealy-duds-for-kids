@@ -34,7 +34,7 @@ const getBlogPost = (id: string) => {
     date: "October 15, 2023",
     author: "Emily Johnson",
     category: "Shopping Tips",
-    image: "/placeholder.svg"
+    image: "https://images.unsplash.com/photo-1579616043939-95d87a6e8512?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
   };
 };
 

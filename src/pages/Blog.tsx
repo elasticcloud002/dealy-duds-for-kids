@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 
@@ -11,7 +12,7 @@ const blogPosts = [
     date: "October 15, 2023",
     author: "Emily Johnson",
     category: "Shopping Tips",
-    image: "/placeholder.svg"
+    image: "https://images.unsplash.com/photo-1579616043939-95d87a6e8512?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
   },
   {
     id: 2,
@@ -20,7 +21,7 @@ const blogPosts = [
     date: "September 28, 2023",
     author: "Michael Roberts",
     category: "Guides",
-    image: "/placeholder.svg"
+    image: "https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
   },
   {
     id: 3,
@@ -29,7 +30,7 @@ const blogPosts = [
     date: "August 10, 2023",
     author: "Sarah Williams",
     category: "Seasonal",
-    image: "/placeholder.svg"
+    image: "https://images.unsplash.com/photo-1560406896-c66ef8677e77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
   },
   {
     id: 4,
@@ -38,7 +39,7 @@ const blogPosts = [
     date: "July 22, 2023",
     author: "David Miller",
     category: "Budgeting",
-    image: "/placeholder.svg"
+    image: "https://images.unsplash.com/photo-1614964579797-8c6bd7a8477e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
   },
 ];
 
@@ -57,7 +58,7 @@ const Blog = () => {
             <div className="space-y-10">
               {blogPosts.map((post) => (
                 <article key={post.id} className="border-b pb-10">
-                  <div className="group cursor-pointer">
+                  <Link to={`/blog/${post.id}`} className="group cursor-pointer">
                     <div className="mb-4 overflow-hidden rounded-lg">
                       <img 
                         src={post.image} 
@@ -79,7 +80,7 @@ const Blog = () => {
                         <span className="text-sm font-medium">By {post.author}</span>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </article>
               ))}
             </div>
