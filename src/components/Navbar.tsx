@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, ShoppingCart, Menu, X } from 'lucide-react';
+import { Search, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CategoryDropdown } from './CategoryDropdown';
 import { categories } from '@/utils/dealUtils';
@@ -60,9 +60,15 @@ export const Navbar = () => {
                 subcategories={category.subcategories} 
               />
             ))}
+            <Link 
+              to="/blog" 
+              className="px-4 py-2 text-foreground hover:text-primary transition-colors duration-200"
+            >
+              Blog
+            </Link>
           </nav>
 
-          {/* Search & Cart */}
+          {/* Search & Menu */}
           <div className="flex items-center space-x-3">
             <Button 
               variant="ghost" 
@@ -71,13 +77,6 @@ export const Navbar = () => {
               className="hover:bg-secondary transition-colors duration-200"
             >
               <Search className="h-5 w-5" />
-            </Button>
-            <Button 
-              variant="ghost" 
-              size="icon"
-              className="hover:bg-secondary transition-colors duration-200"
-            >
-              <ShoppingCart className="h-5 w-5" />
             </Button>
             <Button 
               variant="ghost" 
@@ -167,6 +166,16 @@ export const Navbar = () => {
                       </ul>
                     </div>
                   ))}
+                  <div className="space-y-2">
+                    <h3 className="text-white text-lg font-semibold">Blog</h3>
+                    <Link
+                      to="/blog"
+                      className="text-white/80 hover:text-white text-sm block pl-4"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      View Blog
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
