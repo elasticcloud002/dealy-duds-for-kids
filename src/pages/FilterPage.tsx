@@ -48,7 +48,8 @@ const FilterPage = () => {
                   selectedDiscounts.includes("over50") ? 50 : undefined
     });
     
-    setDeals(filteredDeals);
+    // setDeals(filteredDeals);
+    setDeals(mockDeals);
     setTotalResults(filteredDeals.length);
   }, [categoryId, subcategoryId, selectedCategory, selectedSubcategories, priceRange, selectedDiscounts]);
   
@@ -84,9 +85,9 @@ const FilterPage = () => {
   return (
     <>
       <Navbar />
-      <div className="max-w-7xl mx-auto px-4 py-6">
+      <div className="max-w-7xl mx-auto px-4 py-8 mt-8">
         {/* Breadcrumb */}
-        <div className="flex items-center mb-4 text-sm">
+        <div className="flex items-center mb-4 mt-6 text-sm">
           <Button variant="ghost" size="sm" className="p-0 mr-2" onClick={() => navigate('/')}>
             Home
           </Button>
