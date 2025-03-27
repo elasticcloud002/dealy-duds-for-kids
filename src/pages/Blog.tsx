@@ -30,7 +30,7 @@ const blogPosts = [
     date: "August 10, 2023",
     author: "Sarah Williams",
     category: "Seasonal",
-    image: "https://images.unsplash.com/photo-1560406896-c66ef8677e77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+    image: "https://www.gulfkiddievibes.com/wp-content/uploads/2024/09/how-kids-wear-seasonshow-kids-wear-seasons-9-1024x684.jpg"
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ const blogPosts = [
     date: "July 22, 2023",
     author: "David Miller",
     category: "Budgeting",
-    image: "https://images.unsplash.com/photo-1614964579797-8c6bd7a8477e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+    image: "https://www.becu.org/-/media/Images/heroes-page-promos/blog-articles/2023/Budgeting/Back-to-School-Budget-Friendly-Shopping-List/Blog_Budgeting_Back-to-School-Budget-Friendly-Shopping-List_Promo.jpg?rev=3f6a96570ba048afa5cea69cd1444fda"
   },
 ];
 

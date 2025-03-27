@@ -8,6 +8,7 @@ import { Newsletter } from '@/components/Newsletter';
 import { Footer } from '@/components/Footer';
 import { useDeals, getTodaysDeals, filterDeals } from '@/utils/dealUtils';
 import { ArrowDown } from 'lucide-react';
+import {TodaysDeals} from "@/components/TodayDeals";
 
 const Index = () => {
   const { deals, todaysDeals } = useDeals();
@@ -27,11 +28,11 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 md:pt-32 md:pb-16 px-4 relative">
+      <section className="pt-24 pb-12 md:pt-32 md:pb-4 px-4 relative">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12 md:mb-16 animate-fade-in">
+          <div className="text-center mb-12 md:mb-6 animate-fade-in">
             <h1 className="text-4xl md:text-6xl font-serif font-medium mb-6 tracking-tight">
-              Discover Amazing Deals on Kids' Clothing
+              Discover Amazing Deals on Clothing
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Handpicked discounts from your favorite brands, refreshed daily for savvy parents.
@@ -57,9 +58,9 @@ const Index = () => {
       </section>
       
       {/* Today's Fresh Deals */}
-      <section id="today" className="py-12 px-4">
+      <section id="today" className="py-4 px-4">
         <div className="container mx-auto max-w-6xl">
-          <FeaturedDeals
+          <TodaysDeals
             title="Today's Fresh Deals"
             description="New deals posted today, refreshed every 24 hours."
             deals={todaysDeals.length > 0 ? todaysDeals : featuredDeals.slice(0, 4)}

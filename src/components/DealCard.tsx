@@ -18,7 +18,7 @@ export const DealCard: React.FC<DealCardProps> = ({ deal, index = 0 }) => {
 
   return (
     <div 
-      className="deal-card bg-white rounded-xl overflow-hidden border shadow-sm"
+      className="deal-card bg-white rounded-xl border shadow-sm"
       style={{ animationDelay: `${animationDelay}s` }}
     >
       <div className="relative aspect-[3/2] overflow-hidden">
