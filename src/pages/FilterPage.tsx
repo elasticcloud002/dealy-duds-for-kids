@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -122,11 +123,14 @@ const FilterPage = () => {
         <div className="flex flex-col md:flex-row gap-6">
           {/* Filters sidebar */}
           <div className={`w-full md:w-64 flex-shrink-0 ${showMobileFilters ? 'block' : 'hidden md:block'}`}>
-            <Card>
-              <CardContent className="p-4">
+            <div className="border border-gray-200 rounded-md mb-4 p-2">
+              <p className="text-sm font-medium text-red-500 mb-2">filters</p>
+            </div>
+            <div className="border border-gray-200 rounded-md">
+              <div className="p-4">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-medium">Filters</h3>
-                  <Button variant="ghost" size="sm" onClick={resetFilters}>
+                  <Button variant="ghost" size="sm" onClick={resetFilters} className="text-xs">
                     Reset
                   </Button>
                 </div>
@@ -135,13 +139,14 @@ const FilterPage = () => {
                 {currentCategory && (
                   <div className="mb-6">
                     <h4 className="font-medium mb-3">Subcategories</h4>
-                    <div className="space-y-2">
+                    <div className="space-y-3">
                       {currentCategory.subcategories.map((subcategory) => (
                         <div key={subcategory} className="flex items-center space-x-2">
                           <Checkbox 
                             id={`subcategory-${subcategory}`}
                             checked={selectedSubcategories.includes(subcategory)}
                             onCheckedChange={() => handleSubcategoryChange(subcategory)}
+                            className="border-red-500 text-red-500 h-5 w-5 data-[state=checked]:bg-red-500 data-[state=checked]:text-white rounded-sm"
                           />
                           <Label 
                             htmlFor={`subcategory-${subcategory}`}
@@ -159,20 +164,20 @@ const FilterPage = () => {
                 <div className="mb-6">
                   <h4 className="font-medium mb-3">Price Range</h4>
                   <RadioGroup value={priceRange} onValueChange={setPriceRange}>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="all" id="price-all" />
+                    <div className="flex items-center space-x-2 mb-2">
+                      <RadioGroupItem value="all" id="price-all" className="text-red-500 border-red-500" />
                       <Label htmlFor="price-all" className="text-sm cursor-pointer">All Prices</Label>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="under20" id="price-under20" />
+                    <div className="flex items-center space-x-2 mb-2">
+                      <RadioGroupItem value="under20" id="price-under20" className="text-red-500 border-red-500" />
                       <Label htmlFor="price-under20" className="text-sm cursor-pointer">Under $20</Label>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="under50" id="price-under50" />
+                    <div className="flex items-center space-x-2 mb-2">
+                      <RadioGroupItem value="under50" id="price-under50" className="text-red-500 border-red-500" />
                       <Label htmlFor="price-under50" className="text-sm cursor-pointer">Under $50</Label>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="under100" id="price-under100" />
+                    <div className="flex items-center space-x-2 mb-2">
+                      <RadioGroupItem value="under100" id="price-under100" className="text-red-500 border-red-500" />
                       <Label htmlFor="price-under100" className="text-sm cursor-pointer">Under $100</Label>
                     </div>
                   </RadioGroup>
@@ -181,25 +186,33 @@ const FilterPage = () => {
                 {/* Discount range */}
                 <div className="mb-6">
                   <h4 className="font-medium mb-3">Discount</h4>
-                  <ToggleGroup type="single" variant="outline" className="flex flex-col space-y-2">
-                    <ToggleGroupItem 
-                      value="over25" 
-                      className={`justify-start ${selectedDiscounts.includes('over25') ? 'bg-gray-100' : ''}`}
-                      onClick={() => handleDiscountChange('over25')}
-                    >
-                      25% Off or More
-                    </ToggleGroupItem>
-                    <ToggleGroupItem 
-                      value="over50" 
-                      className={`justify-start ${selectedDiscounts.includes('over50') ? 'bg-gray-100' : ''}`}
-                      onClick={() => handleDiscountChange('over50')}
-                    >
-                      50% Off or More
-                    </ToggleGroupItem>
-                  </ToggleGroup>
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <Checkbox 
+                        id="discount-over25"
+                        checked={selectedDiscounts.includes('over25')}
+                        onCheckedChange={() => handleDiscountChange('over25')}
+                        className="border-red-500 text-red-500 h-5 w-5 data-[state=checked]:bg-red-500 data-[state=checked]:text-white rounded-sm"
+                      />
+                      <Label htmlFor="discount-over25" className="text-sm cursor-pointer">
+                        25% Off or More
+                      </Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Checkbox 
+                        id="discount-over50"
+                        checked={selectedDiscounts.includes('over50')}
+                        onCheckedChange={() => handleDiscountChange('over50')}
+                        className="border-red-500 text-red-500 h-5 w-5 data-[state=checked]:bg-red-500 data-[state=checked]:text-white rounded-sm"
+                      />
+                      <Label htmlFor="discount-over50" className="text-sm cursor-pointer">
+                        50% Off or More
+                      </Label>
+                    </div>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
           
           {/* Product grid */}
