@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -10,8 +9,8 @@ import { Button } from '@/components/ui/button';
 import { ChevronLeft, Filter, SlidersHorizontal } from 'lucide-react';
 import { mockDeals, filterDeals, categories, Deal } from '@/utils/dealUtils';
 import { DealCard } from '@/components/DealCard';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
 
 const FilterPage = () => {
   const { categoryId, subcategoryId } = useParams();
