@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import FilterPage from "./pages/FilterPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -19,8 +20,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/category/:categoryId" element={<Index />} />
-          <Route path="/category/:categoryId/:subcategoryId" element={<Index />} />
+          <Route path="/category/:categoryId" element={<FilterPage />} />
+          <Route path="/category/:categoryId/:subcategoryId" element={<FilterPage />} />
           <Route path="/todays-deals" element={<Index />} />
           <Route path="/hot-deals" element={<Index />} />
           <Route path="/new-arrivals" element={<Index />} />
